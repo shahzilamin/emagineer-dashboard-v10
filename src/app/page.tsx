@@ -1,9 +1,9 @@
 'use client'
 
 import { Header } from '@/components/layout/Header'
+import { ExecutiveHero } from '@/components/dashboard/ExecutiveHero'
+import { TargetProgressBar } from '@/components/dashboard/TargetProgressBar'
 import { MetricCard } from '@/components/dashboard/MetricCard'
-import { CashRunway } from '@/components/dashboard/CashRunway'
-import { GoalTracker } from '@/components/dashboard/GoalTracker'
 import { DailyBriefing } from '@/components/dashboard/DailyBriefing'
 import { DrilldownPanel } from '@/components/drilldown/DrilldownPanel'
 import { CommandBar } from '@/components/commands/CommandBar'
@@ -32,14 +32,14 @@ export default function Dashboard() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="container mx-auto px-4 py-8">
-        {/* CASH IS OXYGEN - The Hero Metric */}
-        <CashRunway businessUnit={businessUnit} />
+      <main className="container mx-auto px-4 py-6">
+        {/* EXECUTIVE HERO - Gradient header with health score (shopify-forecast style) */}
+        <ExecutiveHero businessUnit={businessUnit} />
 
-        {/* GOAL TRACKING - Are We On Track? */}
-        <GoalTracker businessUnit={businessUnit} timePeriod={timePeriod} />
+        {/* TARGET PROGRESS BAR - 5-column with Finaloop benchmarks */}
+        <TargetProgressBar businessUnit={businessUnit} />
 
-        {/* CEO Daily Briefing */}
+        {/* CEO DAILY BRIEFING - What needs attention */}
         <DailyBriefing
           metrics={metrics}
           businessUnit={businessUnit}
@@ -47,54 +47,35 @@ export default function Dashboard() {
           onMetricClick={openDrilldown}
         />
 
-        {/* Hero Section */}
+        {/* DETAILED METRICS - Dive deeper */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mb-8"
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="mb-6"
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-2">
-            {businessUnit === 'wellbefore' ? 'WellBefore' : 'D2C Builders'} Overview
-          </h2>
-          <p className="text-muted-foreground">
-            {timePeriod === 'today'
-              ? "Today's"
-              : timePeriod === 'wtd'
-              ? 'Week to Date'
-              : timePeriod === 'mtd'
-              ? 'Month to Date'
-              : timePeriod === 'qtd'
-              ? 'Quarter to Date'
-              : 'Year to Date'}{' '}
-            performance metrics
-          </p>
+          <h2 className="text-lg font-semibold mb-4">Key Metrics</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {primaryMetrics.map((metric, index) => (
+              <MetricCard
+                key={metric.id}
+                metric={metric}
+                onClick={() => openDrilldown(metric.id)}
+                showComparison={comparisonMode}
+                index={index}
+              />
+            ))}
+          </div>
         </motion.div>
 
-        {/* Primary Metrics - Large Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {primaryMetrics.map((metric, index) => (
-            <MetricCard
-              key={metric.id}
-              metric={metric}
-              onClick={() => openDrilldown(metric.id)}
-              showComparison={comparisonMode}
-              index={index}
-            />
-          ))}
-        </div>
-
-        {/* Secondary Metrics */}
+        {/* ADDITIONAL METRICS */}
         {secondaryMetrics.length > 0 && (
-          <>
-            <motion.h3
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-lg font-semibold mb-4"
-            >
-              Additional Metrics
-            </motion.h3>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <h3 className="text-lg font-semibold mb-4">Additional Metrics</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {secondaryMetrics.map((metric, index) => (
                 <MetricCard
@@ -106,7 +87,7 @@ export default function Dashboard() {
                 />
               ))}
             </div>
-          </>
+          </motion.div>
         )}
       </main>
 
