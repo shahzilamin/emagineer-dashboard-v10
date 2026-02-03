@@ -36,6 +36,33 @@ For every improvement, ask: **Does this help Shaz 100x WellBefore or D2C Builder
 
 ---
 
+## SHAZ FEEDBACK FOR NEXT ITERATION (2026-02-03 17:10)
+
+**Do ALL 4 properly. Don't rush. Don't take shortcuts.**
+
+A) **Operator View** - Add dense tables:
+   - Marketing Performance table (Channel, Spend, Revenue, ROAS, CAC, Orders, CVR, Trend)
+   - Inventory tables (Stockout Risk, Dead Stock)
+   - Period Comparison (WoW, YoY)
+
+B) **Refine Executive View**:
+   - Add more Finaloop metrics
+   - Improve health score calculation (make it meaningful, not arbitrary)
+
+C) **Specific Finaloop Metrics** - These matter most:
+   - Contribution Margin
+   - EBITDA
+   - Net Sales Ratio
+   - ROAS
+   - Ad dollars (spend tracking)
+
+D) **Data Integration Strategy** - Think through properly:
+   - How do we integrate sales from: Amazon, Walmart, Shopify, TikTok
+   - Future marketplace expansion consideration
+   - This needs architecture thinking, not just UI
+
+---
+
 ## Improvement Queue
 
 ### 🔴 High Impact (CEO Decisions)
