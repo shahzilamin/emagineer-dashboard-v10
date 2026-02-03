@@ -2,6 +2,7 @@
 
 import { Header } from '@/components/layout/Header'
 import { MetricCard } from '@/components/dashboard/MetricCard'
+import { CashRunway } from '@/components/dashboard/CashRunway'
 import { DailyBriefing } from '@/components/dashboard/DailyBriefing'
 import { DrilldownPanel } from '@/components/drilldown/DrilldownPanel'
 import { CommandBar } from '@/components/commands/CommandBar'
@@ -31,7 +32,10 @@ export default function Dashboard() {
       <Header />
 
       <main className="container mx-auto px-4 py-8">
-        {/* CEO Daily Briefing - The First Thing Shaz Sees */}
+        {/* CASH IS OXYGEN - The Hero Metric */}
+        <CashRunway businessUnit={businessUnit} />
+
+        {/* CEO Daily Briefing */}
         <DailyBriefing
           metrics={metrics}
           businessUnit={businessUnit}
