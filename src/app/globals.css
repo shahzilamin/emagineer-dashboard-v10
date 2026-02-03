@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+
+    --primary: #2563eb;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+
+    --muted: #f8fafc;
+    --muted-foreground: #64748b;
+
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+
+    --border: #e2e8f0;
+    --ring: #2563eb;
+
+    --status-success: #22c55e;
+    --status-warning: #f59e0b;
+    --status-danger: #ef4444;
+
+    --radius: 0.75rem;
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+
+    --secondary: #334155;
+    --secondary-foreground: #f8fafc;
+
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+
+    --accent: #334155;
+    --accent-foreground: #f8fafc;
+
+    --border: #334155;
+    --ring: #3b82f6;
+
+    --status-success: #4ade80;
+    --status-warning: #fbbf24;
+    --status-danger: #f87171;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .bento-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .metric-card {
+    @apply bg-card rounded-lg border border-border p-5 transition-all duration-200;
+    @apply hover:shadow-md hover:border-primary/20 cursor-pointer;
+  }
+
+  .metric-value {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  .metric-label {
+    @apply text-sm font-medium text-muted-foreground;
+  }
+
+  .status-indicator {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-success {
+    @apply bg-status-success/10 text-status-success;
+  }
+
+  .status-warning {
+    @apply bg-status-warning/10 text-status-warning;
+  }
+
+  .status-danger {
+    @apply bg-status-danger/10 text-status-danger;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-card/80;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Command bar styles */
+[cmdk-root] {
+  @apply bg-card rounded-lg border border-border shadow-2xl overflow-hidden;
+}
+
+[cmdk-input] {
+  @apply w-full px-4 py-3 text-base bg-transparent border-b border-border outline-none;
+  @apply placeholder:text-muted-foreground;
+}
+
+[cmdk-list] {
+  @apply max-h-80 overflow-y-auto p-2;
+}
+
+[cmdk-item] {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-md cursor-pointer;
+  @apply text-sm text-foreground;
+}
+
+[cmdk-item][data-selected="true"] {
+  @apply bg-accent;
+}
+
+[cmdk-group-heading] {
+  @apply px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider;
+}
+
+[cmdk-empty] {
+  @apply py-6 text-center text-sm text-muted-foreground;
+}
