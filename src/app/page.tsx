@@ -3,6 +3,7 @@
 import { Header } from '@/components/layout/Header'
 import { MetricCard } from '@/components/dashboard/MetricCard'
 import { CashRunway } from '@/components/dashboard/CashRunway'
+import { GoalTracker } from '@/components/dashboard/GoalTracker'
 import { DailyBriefing } from '@/components/dashboard/DailyBriefing'
 import { DrilldownPanel } from '@/components/drilldown/DrilldownPanel'
 import { CommandBar } from '@/components/commands/CommandBar'
@@ -34,6 +35,9 @@ export default function Dashboard() {
       <main className="container mx-auto px-4 py-8">
         {/* CASH IS OXYGEN - The Hero Metric */}
         <CashRunway businessUnit={businessUnit} />
+
+        {/* GOAL TRACKING - Are We On Track? */}
+        <GoalTracker businessUnit={businessUnit} timePeriod={timePeriod} />
 
         {/* CEO Daily Briefing */}
         <DailyBriefing
