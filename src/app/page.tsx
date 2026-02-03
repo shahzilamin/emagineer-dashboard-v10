@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect } from 'react'
 import { Header } from '@/components/layout/Header'
 import { MetricCard } from '@/components/dashboard/MetricCard'
+import { DailyBriefing } from '@/components/dashboard/DailyBriefing'
 import { DrilldownPanel } from '@/components/drilldown/DrilldownPanel'
 import { CommandBar } from '@/components/commands/CommandBar'
 import { useDashboardStore } from '@/store/dashboardStore'
@@ -31,6 +31,14 @@ export default function Dashboard() {
       <Header />
 
       <main className="container mx-auto px-4 py-8">
+        {/* CEO Daily Briefing - The First Thing Shaz Sees */}
+        <DailyBriefing
+          metrics={metrics}
+          businessUnit={businessUnit}
+          timePeriod={timePeriod}
+          onMetricClick={openDrilldown}
+        />
+
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
