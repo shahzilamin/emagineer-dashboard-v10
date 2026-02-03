@@ -5,75 +5,90 @@
 
 ---
 
-## Improvement Queue (Priority Order)
+## CEO Questions This Dashboard Must Answer
 
-### 🔴 High Priority
-- [ ] Real data integration - Shopify API connection
-- [ ] Real data integration - Amazon API connection
-- [ ] Date range picker (custom date selection)
-- [ ] Drill-down charts (visualizations in breakdown panels)
+### Every Morning (< 30 seconds)
+- Are we on track this month? (Revenue vs goal)
+- Is anything on fire? (Stockouts, margin drops, CAC spikes)
+- What's the one thing I should focus on today?
 
-### 🟡 Medium Priority
-- [ ] Export functionality (PDF/CSV actually working)
-- [ ] Email/Slack alert configuration for threshold breaches
-- [ ] Mobile responsive improvements
-- [ ] Loading states and skeletons
-- [ ] Error boundaries and fallbacks
+### Weekly Strategic
+- Which products/channels are driving growth vs dragging?
+- Is our unit economics improving or degrading?
+- Are we building a moat (repeat rate, LTV)?
 
-### 🟢 Nice to Have
-- [ ] Keyboard navigation improvements
-- [ ] Saved views/presets
-- [ ] Annotations on charts
-- [ ] Goal setting interface
-- [ ] Historical comparison overlays
-- [ ] Widget customization (drag/drop layout)
+### Monthly Board-Level
+- Cash runway and burn rate
+- Path to profitability metrics
+- YoY growth trajectory
 
 ---
 
-## Completed Improvements
+## The 100x Question
 
-### V10 (2026-02-03)
-- ✅ Core dashboard with metric cards
-- ✅ WellBefore + D2C Builders business units
-- ✅ Time period filters
-- ✅ Comparison mode
-- ✅ Drilldown panels with breakdowns
-- ✅ Command bar (⌘K)
-- ✅ Dark/light theme
-- ✅ Sparklines and goal progress
+For every improvement, ask: **Does this help Shaz 100x WellBefore or D2C Builders?**
+
+100x means:
+- Faster decisions (seconds, not hours of digging)
+- Better decisions (the right data, not just data)
+- Fewer fires (problems surfaced before they explode)
+- Compounding gains (insights that build on each other)
+
+---
+
+## Improvement Queue
+
+### 🔴 High Impact (CEO Decisions)
+- [ ] "What needs my attention TODAY" - AI-generated daily briefing at top
+- [ ] Cash flow projection - When do we run out of money at current burn?
+- [ ] Anomaly alerts - Something changed significantly, here's what
+- [ ] Goal setting + tracking - Not just current state, but vs where we said we'd be
+- [ ] Cohort analysis - Are newer customers better or worse than older ones?
+
+### 🟡 Medium Impact (Operational Excellence)
+- [ ] Inventory forecasting - Days until stockout by SKU
+- [ ] Marketing efficiency deep-dive - CAC by channel with trend
+- [ ] Customer health score - Churn risk indicators
+- [ ] Supplier/vendor scorecards - Who's reliable, who's not
+- [ ] Date range picker for custom analysis
+
+### 🟢 Polish (Trust & Usability)
+- [ ] Real-time data connection status indicator
+- [ ] Data freshness timestamps per metric
+- [ ] Export to PDF/CSV that actually works
+- [ ] Mobile-optimized view
+- [ ] Keyboard shortcuts for power users
+
+---
+
+## Research Notes
+
+### What Great CEO Dashboards Do
+- (Research and add findings here)
+
+### DTC Metrics That Matter
+- (Research and add findings here)
+
+### 3PL Metrics That Matter
+- (Research and add findings here)
 
 ---
 
 ## Session Log
 
-### Session Template
-```
-Date: YYYY-MM-DD HH:MM
-Focus: [feature name]
-Changes:
-- 
-Deployed: yes/no
-Next: [what's next]
-```
+### V10 Initial (2026-02-03 16:00)
+- Built complete dashboard from Claude Code foundation
+- WellBefore + D2C Builders business units
+- Metric cards with sparklines, trends, goal progress
+- Drilldown panels with product/channel/time breakdowns
+- Command bar, theme toggle, comparison mode
 
 ---
 
 ## Design Principles
 
-1. **30-second test** - CEO should understand business health in 30 seconds
-2. **Click for depth** - Summary first, details on demand
-3. **No vanity metrics** - Every number must drive a decision
-4. **Mobile-first** - Works on phone during meetings
-5. **Fast** - Sub-second interactions
-
----
-
-## Data Sources (Future)
-
-| Source | Status | Priority |
-|--------|--------|----------|
-| Shopify | Not connected | High |
-| Amazon Seller Central | Not connected | High |
-| Google Analytics | Not connected | Medium |
-| Meta Ads | Not connected | Medium |
-| QuickBooks | Not connected | Low |
+1. **Answer questions, don't just show data** - Every screen should answer a CEO question
+2. **Bad news travels fast** - Problems should be impossible to miss
+3. **One click to "why"** - Surface → Detail should be instant
+4. **Trust through transparency** - Show data freshness, sources, calculations
+5. **Mobile-first** - CEOs check dashboards in Ubers and between meetings
