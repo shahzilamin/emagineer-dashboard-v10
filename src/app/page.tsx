@@ -3,6 +3,7 @@
 import { Header } from '@/components/layout/Header'
 import { ExecutiveHero } from '@/components/dashboard/ExecutiveHero'
 import { TargetProgressBar } from '@/components/dashboard/TargetProgressBar'
+import { MarketingPerformanceTable } from '@/components/dashboard/MarketingPerformanceTable'
 import { MetricCard } from '@/components/dashboard/MetricCard'
 import { DailyBriefing } from '@/components/dashboard/DailyBriefing'
 import { DrilldownPanel } from '@/components/drilldown/DrilldownPanel'
@@ -38,6 +39,9 @@ export default function Dashboard() {
 
         {/* TARGET PROGRESS BAR - 5-column with Finaloop benchmarks */}
         <TargetProgressBar businessUnit={businessUnit} />
+
+        {/* MARKETING PERFORMANCE TABLE - Channel-level ROAS & CAC */}
+        <MarketingPerformanceTable businessUnit={businessUnit} />
 
         {/* CEO DAILY BRIEFING - What needs attention */}
         <DailyBriefing
